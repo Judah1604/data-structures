@@ -1,11 +1,20 @@
 class LinkedList {
 	constructor() {
-		this.head = Node;
+		this.head = null;
 	}
 
-    insert () {
-        
-    }
+	insert(value) {
+		const newNode = new Node(value);
+		let current = this.head;
+
+		if (current === null) {
+			current = newNode;
+		} else {
+            while (current.next !== null) {
+                current = current.next
+            }
+		}
+	}
 }
 
 class Node {
@@ -15,10 +24,9 @@ class Node {
 	}
 }
 
-const list = new LinkedList()
-const myNode = new Node(10)
+const list = new LinkedList();
 
-list.head = myNode
+list.insert(10);
 
-console.log(list.head)
-console.log(list.head.value)
+console.log(list.head);
+console.log(list.head.value);

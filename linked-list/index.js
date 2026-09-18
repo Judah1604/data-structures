@@ -8,12 +8,14 @@ class LinkedList {
 		let current = this.head;
 
 		if (current === null) {
-			current = newNode;
+			this.head = newNode;
 		} else {
             while (current.next !== null) {
                 current = current.next
             }
+            current.next = newNode
 		}
+        console.log('Current' ,current)
 	}
 }
 
@@ -27,6 +29,6 @@ class Node {
 const list = new LinkedList();
 
 list.insert(10);
+list.insert(20);
 
-console.log(list.head);
-console.log(list.head.value);
+console.log('head:' ,list.head);

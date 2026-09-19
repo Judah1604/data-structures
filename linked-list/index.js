@@ -10,12 +10,12 @@ class LinkedList {
 		if (current === null) {
 			this.head = newNode;
 		} else {
-            while (current.next !== null) {
-                current = current.next
-            }
-            current.next = newNode
+			while (current.next !== null) {
+				current = current.next;
+			}
+			current.next = newNode;
 		}
-        console.log('Current' ,current)
+		console.log("Current", current);
 	}
 }
 
@@ -32,20 +32,37 @@ list.insert(10);
 list.insert(20);
 list.insert(30);
 
-console.log('head:', list.head);
+console.log("head:", list.head);
 
-const values = makeArrayFromNode(list)
-console.log('Values: ', values)
+const values = makeArrayFromList(list);
+const reversed = values.reverse();
+console.log("Values: ", values);
 
-function makeArrayFromNode (list) {
-    let result = [], current = list.head
+const reversedList = makeListFromArray(reversed)
+console.log(reversedList)
 
-    result.push(current.value)
+function makeArrayFromList(list) {
+	let result = [],
+		current = list.head;
 
-    while (current.next !== null) {
-		current = current.next
-        result.push(current.value)
+	result.push(current.value);
+
+	while (current.next !== null) {
+		current = current.next;
+		result.push(current.value);
 	}
 
-    return result
+	return result;
+}
+
+function makeListFromArray(array) {
+	const newList = new LinkedList();
+
+	for (let index = 0; index < array.length; index++) {
+		const element = array[index];
+
+		newList.insert(element);
+	}
+
+	return newList;
 }

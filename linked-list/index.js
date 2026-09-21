@@ -29,7 +29,6 @@ class Node {
 const list = new LinkedList();
 
 list.insert(10);
-list.insert(20);
 list.insert(30);
 
 console.log("head:", list.head);

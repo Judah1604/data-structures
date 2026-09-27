@@ -34,10 +34,7 @@ console.log("head:", list.head);
 
 const values = makeArrayFromList(list);
 const reversed = values.reverse();
-console.log("Values: ", values);
 
-const reversedList = makeListFromArray(reversed)
-console.log(reversedList)
 
 function makeArrayFromList(list) {
 	let result = [],
